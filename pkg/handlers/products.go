@@ -174,9 +174,12 @@ func (h *ItemsHandler) Statistic(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	for _, row := range elems.DropRows {
-		_, err = h.ItemsRepo.Delete(row.VendorID, row.OfferID)
-		if err == nil {
+		count, err := h.ItemsRepo.Delete(row.VendorID, row.OfferID)
+		if count > 0 {
 			st.DropRow++
+		}
+		if count == 0 || err != nil {
+			st.ErrorRow++
 		}
 	}
 

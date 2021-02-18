@@ -112,5 +112,6 @@ func (repo *ItemRepository) Delete(id int, offer_id int) (int64, error) {
 	if err != nil {
 		return 0, err
 	}
+	fmt.Println(result.RowsAffected())
 	return result.RowsAffected()
 }

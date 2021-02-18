@@ -26,14 +26,8 @@ func NewStatisticList() *StatisticList {
 	}
 }
 
-func (st *Statistic) Add(newSt Statistic) {
-	st.CreateRow += newSt.CreateRow
-	st.DropRow += newSt.DropRow
-	st.ErrorRow += newSt.ErrorRow
-	st.UpdateRow += newSt.UpdateRow
-}
-
 func (st *StatisticList) GetProduct(sh *xlsx.Sheet, row int, vendor int) {
+
 	item := products.Product{VendorID: vendor}
 
 	offer, err := sh.Cell(row, 0)
@@ -71,6 +65,7 @@ func (st *StatisticList) GetProduct(sh *xlsx.Sheet, row int, vendor int) {
 	}
 	item.Quantity, err = quantity.Int()
 	if err != nil || item.Quantity < 0 {
+		st.ErrorRow++
 		return
 	}
 
