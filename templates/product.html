@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  </head>
+  <body>
+	<div class="container">
+    <h1>Данные</h1>
+    <table class="table">
+    <thead>
+      <tr>
+        <th>VendorID</th>
+        <th>OfferID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th style="width:140px;"><a href="/index" class="btn btn-success">На главную</a></th>
+      </tr>
+    </thead>
+    <tbody>
+    {{range .Products}}
+      <tr>
+        <td>{{.VendorID}}</td>
+        <td>{{.OfferID}}</td>
+        <td>{{.NameProduct}}</td>
+        <td>{{.Price}}</td>
+        <td>{{.Quantity}}</td>
+      </tr>
+		{{end}}
+    </tbody>
+  </div>
+  
+  </body>
+</html>

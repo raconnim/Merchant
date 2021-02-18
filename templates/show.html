@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  </head>
+  <body>
+	<div class="container">
+        <h1>Получить данные по товару</h1>
+        <form method="POST" action="/product">
+            <div class="form-group">
+                <label for="vendor">ID продавца:</label>
+                <input type="text" class="form-control" name="vendor" id="vendor">
+            </div>
+            <div class="form-group">
+                <label for="offerid">offer_id:</label>
+                <input type="text" class="form-control" name="offerid" id="offerid">
+            </div>
+            <div class="form-group">
+                <label for="subname">Vendor</label>
+                <input type="text" class="form-control" name="subname" id="subname">
+            </div>
+            <button type="submit" class="btn btn-primary">Показать</button>
+        </form>
+    </div>
+  </body>
+</html>
